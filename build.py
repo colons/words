@@ -19,6 +19,9 @@ ARTICLES_PATH = os.path.join(BASE_PATH, 'articles')
 
 settings.configure(
     TEMPLATE_DIRS=[os.path.join(BASE_PATH, 'templates')],
+    DATE_FORMAT='M jS, Y',
+    USE_TZ=True,
+    TIME_ZONE='Europe/London',
 )
 
 
