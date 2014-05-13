@@ -4,6 +4,6 @@
   {% for article in articles %}
     <h2><a href="{{ article.slug }}">{{ article.title }}</a></h2>
     <p class="date">{{ article.meta.date }}</span>
-    {{ article.html|safe }}
+    {{ article.index_html|safe }}
   {% endfor %}
 {% endblock %}

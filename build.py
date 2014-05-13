@@ -3,6 +3,7 @@
 import os
 import shutil
 import subprocess
+from urlparse import urlparse
 
 from bs4 import BeautifulSoup
 from django.template import Context
@@ -36,6 +37,18 @@ class Article(object):
         self.title = title_element.text
         title_element.decompose()
         self.html = unicode(soup)
+
+        for attribute in ['src', 'href']:
+            for element in soup.select('[{0}]'.format(attribute)):
+                url = urlparse(element[attribute])
+
+                if url.netloc or url.path.startswith('/'):
+                    continue
+
+                element[attribute] = '/'.join([self.slug, url.path])
+                print element
+
+        self.index_html = unicode(soup)
 
     def get_metadata(self):
         with open(os.path.join(self.path, 'meta.yaml')) as yaml_file:
