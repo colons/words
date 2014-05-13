@@ -90,7 +90,7 @@ def render_feed(articles):
         feed.add(
             title=article.title,
             content=feed_item_template.render(context),
-            content_type='text/html',
+            content_type='html',
             author='Iain Dawson',
             url='https://colons.co/words/{0.slug}/'.format(article),
             updated=article.meta['date'],
