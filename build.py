@@ -7,6 +7,7 @@ import subprocess
 from django.template import Context
 from django.template.loader import get_template
 from django.conf import settings
+from bs4 import BeautifulSoup
 
 
 BASE_PATH = os.path.dirname(__file__)
@@ -25,13 +26,19 @@ class Article(object):
         self.markdown_path = os.path.join(self.path, 'article.markdown')
 
     def get_html(self):
-        output = subprocess.check_output(['markdown', self.markdown_path])
-        return output
+        return subprocess.check_output(['markdown', self.markdown_path])
+
+    def get_title(self):
+        return BeautifulSoup(self.get_html()).select('h1')[0].text
+
+    def get_context(self):
+        return {
+            'content': self.get_html(),
+            'title': self.get_title(),
+        }
 
     def render(self):
-        context = Context({
-            'content': self.get_html()
-        })
+        context = Context(self.get_context())
 
         return get_template('article.html').render(context)
 
