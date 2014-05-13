@@ -3,5 +3,7 @@
 {% block title %}{{ title }}{% endblock %}
 
 {% block content %}
+  <h1>{{ title }}</h1>
+  <p class="date">{{ meta.date }}</span>
   {{ content|safe }}
 {% endblock %}

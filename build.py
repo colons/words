@@ -4,10 +4,11 @@ import os
 import shutil
 import subprocess
 
+from bs4 import BeautifulSoup
 from django.template import Context
 from django.template.loader import get_template
 from django.conf import settings
-from bs4 import BeautifulSoup
+import yaml
 
 
 BASE_PATH = os.path.dirname(__file__)
@@ -25,16 +26,24 @@ class Article(object):
         self.path = os.path.join(ARTICLES_PATH, self.slug)
         self.markdown_path = os.path.join(self.path, 'article.markdown')
 
-    def get_html(self):
-        return subprocess.check_output(['markdown', self.markdown_path])
+        raw_html = subprocess.check_output(['markdown', self.markdown_path])
+        soup = BeautifulSoup(raw_html)
+        title_element = soup.select('h1')[0]
+        self.title = title_element.text
+        title_element.decompose()
+        self.html = unicode(soup)
 
-    def get_title(self):
-        return BeautifulSoup(self.get_html()).select('h1')[0].text
+        self.metadata = self.get_metadata()
+
+    def get_metadata(self):
+        with open(os.path.join(self.path, 'meta.yaml')) as yaml_file:
+            return yaml.load(yaml_file)
 
     def get_context(self):
         return {
-            'content': self.get_html(),
-            'title': self.get_title(),
+            'content': self.html,
+            'title': self.title,
+            'meta': self.metadata,
         }
 
     def render(self):
