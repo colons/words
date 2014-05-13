@@ -3,7 +3,7 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
-  <a href="..">home</a>
+  <p class="back"><a href="..">back</a></p>
   <h1>{{ article.title }}</h1>
   <p class="date">{{ article.meta.date }}</span>
   {{ article.html|safe }}

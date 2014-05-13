@@ -3,8 +3,67 @@
   <head>
     <meta charset="utf-8"/>
     <title>{% block title %}words from a colons{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        color: #111;
+        background-color: #fafafa;
+        max-width: 50em;
+        margin: 0 auto;
+        font-size: 1.1em;
+        padding: 0 1em;
+      }
+
+      p.back {
+        padding-top: 1em;
+        position: relative;
+      }
+
+      p.back a:hover::before {
+        content: '«';
+        position: absolute;
+        display: inline-block;
+        left: -.6em;
+      }
+
+      p {
+        line-height: 1.4em;
+      }
+
+      .date {
+        position: relative;
+        top: -1em;
+        font-size: 0.9em;
+      }
+
+      a {
+        color: #c52;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: #999;
+      }
+
+      a:hover {
+        color: #111;
+        border-bottom: 1px dotted #c52;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      #footer img {
+        display: block;
+        margin: 2em auto;
+        width: 7em;
+        height: 7em;
+      }
+    </style>
   </head>
   <body>
     {% block content %}{% endblock %}
+    <a id="footer" href="https://colons.co/"><img alt="toats a colons joint" src="https://colons.co/stamp.png"/></a>
   </body>
 </html>
