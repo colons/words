@@ -10,8 +10,6 @@ Unfortunately, since a couple of days after Mountain Lion was released, I have
 barely touched Notification Center. What follows is an attempt to rationalise
 exactly why that is.
 
-----
-
 ## Action
 
 One of my favourite things about Android's notifications are that if I get an

@@ -35,10 +35,7 @@ class Article(object):
         title_element = soup.select('h1')[0]
         self.title = title_element.text
         title_element.decompose()
-
-        html = unicode(soup)
-        self.pre_jump, self.post_jump = html.split('<hr/>')
-        self.html = ''.join([self.pre_jump, self.post_jump])
+        self.html = unicode(soup)
 
     def get_metadata(self):
         with open(os.path.join(self.path, 'meta.yaml')) as yaml_file:
