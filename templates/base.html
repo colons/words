@@ -15,16 +15,22 @@
       }
 
       header {
-        padding-top: 2em;
         position: relative;
         font-size: 0.9em;
+        padding: 1em 0;
+      }
+
+      header h1 {
+        font-size: 1.5em;
+        margin-bottom: 0;
+        font-weight: normal;
       }
 
       a.back:hover::before {
         content: '«';
         position: absolute;
         display: inline-block;
-        left: -.6em;
+        left: -.7em;
       }
 
       p {
@@ -72,6 +78,7 @@
   </head>
   <body>
     <header>
+      <h1>words from a colons</h1>
       {% block header %}{% endblock %}
     </header>
     {% block content %}{% endblock %}
