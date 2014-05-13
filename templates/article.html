@@ -2,9 +2,12 @@
 
 {% block title %}{{ article.title }}{% endblock %}
 
+{% block header %}
+  <a class="back" href="..">back</a>
+{% endblock %}
+
 {% block content %}
   <article>
-    <p class="back"><a href="..">back</a></p>
     <h1>{{ article.title }}</h1>
     <p class="date">{{ article.meta.date }}</span>
     {{ article.html|safe }}

@@ -14,12 +14,13 @@
         padding: 0 1em;
       }
 
-      p.back {
-        padding-top: 1em;
+      header {
+        padding-top: 2em;
         position: relative;
+        font-size: 0.9em;
       }
 
-      p.back a:hover::before {
+      a.back:hover::before {
         content: '«';
         position: absolute;
         display: inline-block;
@@ -58,8 +59,11 @@
         max-width: 100%;
       }
 
-      #footer img {
-        display: block;
+      footer {
+        text-align: center;
+      }
+
+      footer img {
         margin: 0 auto 2em;
         width: 7em;
         height: 7em;
@@ -67,7 +71,12 @@
     </style>
   </head>
   <body>
+    <header>
+      {% block header %}{% endblock %}
+    </header>
     {% block content %}{% endblock %}
-    <a id="footer" href="https://colons.co/"><img alt="toats a colons joint" src="https://colons.co/stamp.png"/></a>
+    <footer>
+      <a href="https://colons.co/"><img alt="toats a colons joint" src="https://colons.co/stamp.png"/></a>
+    </footer>
   </body>
 </html>
