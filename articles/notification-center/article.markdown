@@ -62,14 +62,14 @@ the room) and follow up on it. Like an animal.
 
 ## Retention
 
-…so it goes unchecked. Notifications come in, and stay in, and will stay there
+…so it goes unchecked. Notifications come in, and stay in, and will remain
 until you dismiss them.
 
 Except that's not true at all. What actually happens is that each app has a
-rotating collection of the five most recent notifications they emitted. If you
-get a lot of emails, Notification Center is useless for triage. If you get a
-lot of tweets, Notification Center is useless for sampling. In all cases I've
-encountered, the app that spawned the notification is a superior tool for
+rotating collection of the five most recent notifications they emitted. Thus,
+if you get a lot of emails, Notification Center is useless for triage. If you
+get a lot of tweets, Notification Center is useless for sampling. In all cases
+I've encountered, the app that spawned the notification is a superior tool for
 catching up on things. Further, most of them have icon badges or menu bar
 widgets to constantly remind you that something is worth your attention, making
 Notification Center entirely redundant.
