@@ -37,7 +37,7 @@ class Article(object):
 
     def bounce(self):
         build_directory = os.path.join(BUILD_PATH, self.slug)
-        os.mkdir(build_directory)
+        shutil.copytree(self.path, build_directory)
         html_path = os.path.join(build_directory, 'index.html')
 
         rendered = self.render()
