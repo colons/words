@@ -1,3 +1,4 @@
 django==1.6.4
 beautifulsoup4
 pyyaml
+pyatom

@@ -9,6 +9,7 @@ from bs4 import BeautifulSoup
 from django.template import Context
 from django.template.loader import get_template
 from django.conf import settings
+from pyatom import AtomFeed
 import yaml
 
 
@@ -73,6 +74,27 @@ def render_index(articles):
     return get_template('index.html').render(context)
 
 
+def render_feed(articles):
+    feed = AtomFeed(
+        title='words from a colons',
+        feed_url='https://colons.co/words/feed.xml',
+        url='https://colons.co/words/',
+        author='Iain Dawson',
+    )
+
+    for article in articles:
+        feed.add(
+            title=article.title,
+            content=article.index_html,
+            content_type='text/html',
+            author='Iain Dawson',
+            url='https://colons.co/words/{0.slug}/'.format(article),
+            updated=article.meta['date'],
+        )
+
+    return feed.to_string()
+
+
 def build():
     if os.path.isdir(BUILD_PATH):
         shutil.rmtree(BUILD_PATH)
@@ -90,6 +112,9 @@ def build():
 
     with open(os.path.join(BUILD_PATH, 'index.html'), 'w') as index_file:
         index_file.write(render_index(articles).encode('utf-8'))
+
+    with open(os.path.join(BUILD_PATH, 'feed.xml'), 'w') as feed_file:
+        feed_file.write(render_feed(articles).encode('utf-8'))
 
 
 if __name__ == "__main__":
