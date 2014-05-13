@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
   <a href="..">home</a>
-  <h1>{{ title }}</h1>
-  <p class="date">{{ meta.date }}</span>
-  {{ content|safe }}
+  <h1>{{ article.title }}</h1>
+  <p class="date">{{ article.meta.date }}</span>
+  {{ article.html|safe }}
 {% endblock %}

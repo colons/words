@@ -25,29 +25,27 @@ class Article(object):
         self.slug = slug
         self.path = os.path.join(ARTICLES_PATH, self.slug)
         self.markdown_path = os.path.join(self.path, 'article.markdown')
+        self.read_markdown()
 
+        self.meta = self.get_metadata()
+
+    def read_markdown(self):
         raw_html = subprocess.check_output(['markdown', self.markdown_path])
         soup = BeautifulSoup(raw_html)
         title_element = soup.select('h1')[0]
         self.title = title_element.text
         title_element.decompose()
-        self.html = unicode(soup)
 
-        self.metadata = self.get_metadata()
+        html = unicode(soup)
+        self.pre_jump, self.post_jump = html.split('<hr/>')
+        self.html = ''.join([self.pre_jump, self.post_jump])
 
     def get_metadata(self):
         with open(os.path.join(self.path, 'meta.yaml')) as yaml_file:
             return yaml.load(yaml_file)
 
-    def get_context(self):
-        return {
-            'content': self.html,
-            'title': self.title,
-            'meta': self.metadata,
-        }
-
     def render(self):
-        context = Context(self.get_context())
+        context = Context({'article': self})
         return get_template('article.html').render(context)
 
     def bounce(self):
@@ -80,7 +78,7 @@ def build():
         articles.append(article)
 
     with open(os.path.join(BUILD_PATH, 'index.html'), 'w') as index_file:
-        index_file.write(render_index(articles))
+        index_file.write(render_index(articles).encode('utf-8'))
 
 
 if __name__ == "__main__":
