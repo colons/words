@@ -82,10 +82,14 @@ def render_feed(articles):
         author='Iain Dawson',
     )
 
+    feed_item_template = get_template('feed_item.html')
+
     for article in articles:
+        context = Context({'article': article})
+
         feed.add(
             title=article.title,
-            content=article.index_html,
+            content=feed_item_template.render(context),
             content_type='text/html',
             author='Iain Dawson',
             url='https://colons.co/words/{0.slug}/'.format(article),
