@@ -2,8 +2,10 @@
 
 {% block content %}
   {% for article in articles %}
-    <h1><a href="{{ article.slug }}">{{ article.title }}</a></h1>
-    <p class="date">{{ article.meta.date }}</span>
-    {{ article.index_html|safe }}
+    <article>
+      <h1><a href="{{ article.slug }}">{{ article.title }}</a></h1>
+      <p class="date">{{ article.meta.date }}</span>
+      {{ article.index_html|safe }}
+    </article>
   {% endfor %}
 {% endblock %}

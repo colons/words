@@ -86,6 +86,8 @@ def build():
         article.bounce()
         articles.append(article)
 
+    articles.sort(key=lambda a: a.meta['date'], reverse=True)
+
     with open(os.path.join(BUILD_PATH, 'index.html'), 'w') as index_file:
         index_file.write(render_index(articles).encode('utf-8'))
 

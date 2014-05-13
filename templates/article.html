@@ -3,8 +3,10 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
-  <p class="back"><a href="..">back</a></p>
-  <h1>{{ article.title }}</h1>
-  <p class="date">{{ article.meta.date }}</span>
-  {{ article.html|safe }}
+  <article>
+    <p class="back"><a href="..">back</a></p>
+    <h1>{{ article.title }}</h1>
+    <p class="date">{{ article.meta.date }}</span>
+    {{ article.html|safe }}
+  </article>
 {% endblock %}
