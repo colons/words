@@ -48,7 +48,6 @@ class Article(object):
 
     def render(self):
         context = Context(self.get_context())
-
         return get_template('article.html').render(context)
 
     def bounce(self):
@@ -62,15 +61,26 @@ class Article(object):
             html_file.write(rendered.encode('utf-8'))
 
 
+def render_index(articles):
+    context = Context({'articles': articles})
+    return get_template('index.html').render(context)
+
+
 def build():
     if os.path.isdir(BUILD_PATH):
         shutil.rmtree(BUILD_PATH)
 
     os.mkdir(BUILD_PATH)
 
+    articles = []
+
     for slug in os.listdir(ARTICLES_PATH):
         article = Article(slug)
         article.bounce()
+        articles.append(article)
+
+    with open(os.path.join(BUILD_PATH, 'index.html'), 'w') as index_file:
+        index_file.write(render_index(articles))
 
 
 if __name__ == "__main__":
