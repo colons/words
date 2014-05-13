@@ -46,7 +46,6 @@ class Article(object):
                     continue
 
                 element[attribute] = '/'.join([self.slug, url.path])
-                print element
 
         self.index_html = unicode(soup)
 
