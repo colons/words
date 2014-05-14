@@ -6,14 +6,14 @@ Lion][ars]. Growl was, at the time, a surprisingly critical part of the OS X
 ecosystem. Apple bringing Growl's responsibilities in-house seemed long
 overdue.
 
-Unfortunately, since a couple of days after Mountain Lion was released, I have
-barely touched Notification Center. What follows is an attempt to rationalise
-exactly why that is.
+I have barely touched Notification Center since a couple of days after Mountain
+Lion was released. What follows is an attempt to rationalise exactly why that
+is.
 
 ## Action
 
-One of my favourite things about Android's notifications are that if I get an
-email that I do not have to act on, I can archive it right from the
+One of my favourite things about Android's notification interface is that if I
+get an email that I do not have to act on, I can archive it right from the
 notification. I use this a lot.
 
 Notification Center's transient notifications recently got similar little
@@ -25,9 +25,9 @@ buttons.
 
 ## Persistence
 
-When you have pending notifications on Android, it's like a splinter. You *can*
-ignore them, and if you are busy, you can even forget they're there, but you
-won't feel right until they're gone.
+When you have pending notifications on Android, it's like having a splinter.
+You *can* ignore them, and if you are busy, you can even forget they're there,
+but you won't feel right until they're gone.
 
 As an example, here's before:
 
