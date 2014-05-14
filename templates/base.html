@@ -17,7 +17,6 @@
 
       header {
         position: relative;
-        font-size: 0.9em;
         padding: 1em 0;
       }
 
@@ -27,7 +26,24 @@
         font-weight: normal;
       }
 
-      a.back:hover::before {
+      #links {
+        margin: 0;
+        padding: 0;
+      }
+
+      #links li {
+        display: inline;
+      }
+
+      #links li::after {
+        content: ' ∙';
+      }
+
+      #links li:last-child::after {
+        content: '';
+      }
+
+      #links li a.back:hover::before {
         content: '«';
         position: absolute;
         display: inline-block;
@@ -83,7 +99,11 @@
   <body>
     <header>
       <h1>words from a colons</h1>
-      {% block header %}{% endblock %}
+      <ul id="links">
+        {% block header_links %}{% endblock %}
+        <li><a href="https://colons.co/">about</a></li>
+        <li><a href="feed.xml">feed</a></li>
+      </ul>
     </header>
     {% block content %}{% endblock %}
     <footer>
