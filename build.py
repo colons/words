@@ -17,6 +17,11 @@ BASE_PATH = os.path.dirname(__file__)
 BUILD_PATH = os.path.join(BASE_PATH, '_build')
 ARTICLES_PATH = os.path.join(BASE_PATH, 'articles')
 
+DOMAIN = 'https://colons.co'
+ROOT = '/words/'
+FEED_FILENAME = 'feed.xml'
+FEED_URL = ROOT + FEED_FILENAME
+
 settings.configure(
     TEMPLATE_DIRS=[os.path.join(BASE_PATH, 'templates')],
     DATE_FORMAT='M jS, Y',
@@ -28,6 +33,7 @@ settings.configure(
 class Article(object):
     def __init__(self, slug):
         self.slug = slug
+        self.absolute_url = ROOT + self.slug
         self.path = os.path.join(ARTICLES_PATH, self.slug)
         self.markdown_path = os.path.join(self.path, 'article.markdown')
         self.read_markdown()
@@ -40,25 +46,22 @@ class Article(object):
         title_element = soup.select('h1')[0]
         self.title = title_element.text
         title_element.decompose()
-        self.html = unicode(soup)
 
         for attribute in ['src', 'href']:
             for element in soup.select('[{0}]'.format(attribute)):
                 url = urlparse(element[attribute])
 
-                if url.netloc or url.path.startswith('/'):
-                    continue
+                if not (url.netloc or url.path.startswith('/')):
+                    element[attribute] = '/'.join([self.absolute_url, url.path])
 
-                element[attribute] = '/'.join([self.slug, url.path])
-
-        self.index_html = unicode(soup)
+        self.html = unicode(soup)
 
     def get_metadata(self):
         with open(os.path.join(self.path, 'meta.yaml')) as yaml_file:
             return yaml.load(yaml_file)
 
     def render(self):
-        context = Context({'article': self})
+        context = Context({'globals': globals(), 'article': self})
         return get_template('article.html').render(context)
 
     def bounce(self):
@@ -73,15 +76,15 @@ class Article(object):
 
 
 def render_index(articles):
-    context = Context({'articles': articles})
+    context = Context({'globals': globals(), 'articles': articles})
     return get_template('index.html').render(context)
 
 
 def render_feed(articles):
     feed = AtomFeed(
         title='words from a colons',
-        feed_url='https://colons.co/words/feed.xml',
-        url='https://colons.co/words/',
+        feed_url=DOMAIN + FEED_URL,
+        url=DOMAIN + ROOT,
         author='Iain Dawson',
     )
 
@@ -95,7 +98,7 @@ def render_feed(articles):
             content=feed_item_template.render(context),
             content_type='html',
             author='Iain Dawson',
-            url='https://colons.co/words/{0.slug}/'.format(article),
+            url=DOMAIN + article.absolute_url,
             updated=article.meta['date'],
         )
 
@@ -120,7 +123,7 @@ def build():
     with open(os.path.join(BUILD_PATH, 'index.html'), 'w') as index_file:
         index_file.write(render_index(articles).encode('utf-8'))
 
-    with open(os.path.join(BUILD_PATH, 'feed.xml'), 'w') as feed_file:
+    with open(os.path.join(BUILD_PATH, FEED_FILENAME), 'w') as feed_file:
         feed_file.write(render_feed(articles).encode('utf-8'))
 
 

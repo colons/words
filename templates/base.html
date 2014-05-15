@@ -102,7 +102,7 @@
       <ul id="links">
         {% block header_links %}{% endblock %}
         <li><a href="https://colons.co/">about</a></li>
-        <li><a href="feed.xml">feed</a></li>
+        <li><a href="{{ globals.ROOT }}{{ globals.FEED_FILENAME }}">feed</a></li>
       </ul>
     </header>
     {% block content %}{% endblock %}
