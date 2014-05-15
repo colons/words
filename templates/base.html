@@ -87,10 +87,14 @@
 
       footer {
         text-align: center;
+        margin: 0 auto 3em;
+      }
+
+      footer a.logo:hover {
+        border: none;
       }
 
       footer img {
-        margin: 0 auto 3em;
         width: 6em;
         height: 6em;
       }
@@ -107,7 +111,10 @@
     </header>
     {% block content %}{% endblock %}
     <footer>
-      <a href="https://colons.co/"><img alt="toats a colons joint" src="https://colons.co/stamp.png"/></a>
+      <a class="logo" href="https://colons.co/"><img alt="toats a colons joint" src="https://colons.co/stamp.png"/></a>
+      <p>
+        <a href="http://musicfortheblind.co.uk/meta/">talk to me</a>
+      </p>
     </footer>
   </body>
 </html>
