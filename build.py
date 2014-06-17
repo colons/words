@@ -75,6 +75,12 @@ class Article(object):
         with open(html_path, 'w') as html_file:
             html_file.write(rendered.encode('utf-8'))
 
+    def history_url(self):
+        return (
+            'https://github.com/colons/words/commits/master/articles/'
+            '{slug}/article.markdown'.format(slug=self.slug)
+        )
+
 
 def render_index(articles):
     context = Context({'globals': globals(), 'articles': articles})

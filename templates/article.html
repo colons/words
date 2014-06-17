@@ -9,7 +9,7 @@
 {% block content %}
   <article>
     <h1>{{ article.title }}</h1>
-    <p class="date">{{ article.meta.date|date }}</p>
+    <p class="subhead"><span class="date">{{ article.meta.date|date }}</span> <a href="{{ article.history_url }}">history</a></p>
     {{ article.html|safe }}
   </article>
 {% endblock %}

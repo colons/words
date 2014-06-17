@@ -40,7 +40,7 @@
       }
 
       #links li:last-child::after {
-        content: '';
+        content: none;
       }
 
       #links li a.back:hover::before {
@@ -62,9 +62,17 @@
         margin-bottom: 0;
       }
 
-      article .date {
+      article .subhead {
         margin-top: 0;
         font-size: 0.9em;
+      }
+
+      article .subhead > *::after {
+        content: ' ∙';
+      }
+
+      article .subhead > *:last-child::after {
+        content: none;
       }
 
       a {
