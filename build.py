@@ -52,7 +52,8 @@ class Article(object):
                 url = urlparse(element[attribute])
 
                 if not (url.netloc or url.path.startswith('/')):
-                    element[attribute] = '/'.join([self.absolute_url, url.path])
+                    element[attribute] = '/'.join([self.absolute_url,
+                                                   url.path])
 
         self.html = unicode(soup)
 
