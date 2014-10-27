@@ -14,7 +14,7 @@ loads of people asking for photos
 
 that guy with the nephew who either had a question he wanted to ask but couldn't bring himself to or just wanted to prove he was open-minded and closed with saying that he did it on the weekends
 
-> (overheard) that's a boy! shocking!
+> (overheard) that's a boy! dressed as a girl! shocking!
 
 ## heading out
 
