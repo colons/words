@@ -44,13 +44,6 @@
         content: none;
       }
 
-      #links li a.back:hover::before {
-        content: '«';
-        position: absolute;
-        display: inline-block;
-        left: -.7em;
-      }
-
       p {
         line-height: 1.4em;
       }
@@ -117,9 +110,13 @@
   </head>
   <body>
     <header>
-      <h1>words from a colons</h1>
+      {% if is_index %}
+        <h1>words from a colons</h1>
+      {% else %}
+        <h1><a href=".">words from a colons</a></h1>
+      {% endif %}
+
       <ul id="links">
-        {% block header_links %}{% endblock %}
         <li><a href="https://colons.co/">about</a></li>
         <li><a href="{{ globals.FEED_FILENAME }}">feed</a></li>
       </ul>

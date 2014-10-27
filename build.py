@@ -83,7 +83,11 @@ class Article(object):
 
 
 def render_index(articles):
-    context = Context({'globals': globals(), 'articles': articles})
+    context = Context({
+        'is_index': True,
+        'globals': globals(),
+        'articles': articles,
+    })
     return get_template('index.html').render(context)
 
 
