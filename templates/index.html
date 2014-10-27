@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-  {% for article in articles %}
-    <article>
-      <h1><a href="{{ article.slug }}">{{ article.title }}</a></h1>
-      <p class="subhead"><span class="date">{{ article.meta.date|date }}</span> <a href="{{ article.history_url }}">history</a></p>
-      {{ article.html|safe }}
-    </article>
-  {% endfor %}
+  <main class="article-list">
+    {% for article in articles %}
+      <article>
+        <h1><a href="{{ article.slug }}">{{ article.title }}</a></h1>
+        <p class="subhead"><span class="date">{{ article.meta.date|date }}</span> <a href="{{ article.history_url }}">history</a></p>
+        {{ article.html|safe }}
+      </article>
+    {% endfor %}
+  </main>
 {% endblock %}
