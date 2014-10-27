@@ -10,6 +10,8 @@ Builders on the top of the DMU building:
 
 ## at the con
 
+loads of people asking for photos
+
 that guy with the nephew who either had a question he wanted to ask but couldn't bring himself to or just wanted to prove he was open-minded and closed with saying that he did it on the weekends
 
 > (overheard) that's a boy! shocking!
