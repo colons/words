@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <title>{% block title %}words from a colons{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="{{ globals.ROOT }}">
     <style>
       body {
         color: #111;
@@ -120,7 +121,7 @@
       <ul id="links">
         {% block header_links %}{% endblock %}
         <li><a href="https://colons.co/">about</a></li>
-        <li><a href="{{ globals.ROOT }}{{ globals.FEED_FILENAME }}">feed</a></li>
+        <li><a href="{{ globals.FEED_FILENAME }}">feed</a></li>
       </ul>
     </header>
     {% block content %}{% endblock %}
