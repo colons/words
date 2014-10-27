@@ -16,6 +16,8 @@ that guy with the nephew who either had a question he wanted to ask but couldn't
 
 > (overheard) that's a boy! dressed as a girl! shocking!
 
+guy yells reimu and looks nonchalantly in the other direction, i 'YOU WHAT M8'
+
 ## heading out
 
 some kid:
