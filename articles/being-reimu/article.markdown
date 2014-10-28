@@ -1,7 +1,7 @@
 # Being Reimu
 
 It's a little after 7 A.M. on the morning of Saturday the 25th of October.
-Leicester is still, cold, cloudless and a little misty, although the sun is
+Leicester is still, cold, cloudless, and a little misty, although the sun is
 rapidly burning it off. A man on his morning walk sees us approaching on the
 pavement and considers us for a moment. Shortly, he comes to his conclusion and
 knowingly asks, “Good night, lads?”
