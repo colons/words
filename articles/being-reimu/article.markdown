@@ -74,7 +74,7 @@ Secondly, though, and more importantly, *what the fuck does it matter to you,
 Guy*? And why did you feel the need to let us and the our fellow passengers
 know of your disapproval? Are we a sign of the coming apocalypse? An invitation
 for Satan to bring about babies having babies and cats living with dogs? Shit,
-man, someone might even find themselves attracted to us, and that wouldn't be
+man, people might even find themselves attracted to us, and that wouldn't be
 *right*, dammit!
 
 ----
