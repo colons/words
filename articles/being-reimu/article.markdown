@@ -100,7 +100,7 @@ started their evening of drinking and the roads are still busy. We are honked
 at a few times, a near-toothless man walking out of a pub blesses us, and my
 pulse doubles every time we have to walk past a man. The vast majority of
 interactions we have are positive, but I can't shake the fear of quite how
-upset people can get about Gender Stuff. It was fun, but I was glad to get the
+upset people can get about Gender Stuff. It was fun, but I am glad to get the
 costume off.
 
 I'm lucky that I can.
