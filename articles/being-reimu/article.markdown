@@ -21,9 +21,9 @@ but we've a long way to go and we're pretty conspicuous.
 We're white dudes. We know that when we get home we can take the costumes off
 and revert to our usual, privileged state. It doesn't hurt that we are not
 wearing makeup and these particular costumes make it clear even to people who
-don't recognise the characters that we are very much still white dudes. We are
-drawing attention to gender in a way that takes people out of their comfort
-zones, and because we are not *us*, we can view their reactions with
+don't recognise the characters that we are very much still white dudes. Still,
+we are drawing attention to gender in a way that takes people out of their
+comfort zones, but because we are not *us*, we can view their reactions with
 detachment.
 
 Reactions are varied, fascinating, and occasionally frightening. Some
