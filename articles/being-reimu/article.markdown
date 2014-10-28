@@ -27,7 +27,7 @@ comfort zones, but because we are not *us*, we can view their reactions with
 detachment.
 
 Reactions are varied, fascinating, and occasionally frightening. Some
-compliment us with slightly sneering irony. Some complement us with sincerity.
+compliment us with slightly sneering irony. Some compliment us with sincerity.
 Some children ‘whisper’ to their parents as we pass (“whoah-ha-ha-ha… that's a
 man…”), some parents approach us with their kids and ask with genuine interest
 what we're dressed up for. The train conductor tells us we're pretty and the
@@ -50,7 +50,7 @@ all. We humour him.
 [yirba]: http://sachcell.tumblr.com/post/100990329767/i-think-this-is-my-fav-photo-from-today-omg-hope
 
 The man who takes our order at dinner gets super into the spirit of it, asking
-who we are and complementing us. After taking our orders, he calls us ‘girls’
+who we are and complimenting us. After taking our orders, he calls us ‘girls’
 and then immediately fears he has crossed a line and gets sheepish and
 apologetic and quickly scampers off. I later try to communicate to him that we
 are more than okay with being referred to in character, but I mess up and
