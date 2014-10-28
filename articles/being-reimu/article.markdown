@@ -83,7 +83,7 @@ On the train back to Leicester, we are approached at our seats by a smiling
 woman. “I saw you earlier on the train into London,” she says, “*you look
 exactly the same*. Have you had fun?”
 
-We appreciated the curiosity and chatted for a bit.
+We appreciate the curiosity and chat for a bit.
 
 I found her opening remark especially interesting not because of anything to do
 with our costume or any kind of maliciousness on her part, but because that
