@@ -89,9 +89,9 @@ I found her opening remark especially interesting not because of anything to do
 with our costume or any kind of maliciousness on her part, but because that
 middle part was just a thought that she had had. It was not intended for us.
 Something weird was happening, and she dropped her guard for a moment. She said
-something that made absolutely no sense as anything but part of an inner
-monologue in which she was trying to work out if we were the same people she
-saw earlier or not. It's scary that that can happen.
+something that made  no sense except as part of an inner monologue in which she
+was trying to work out if we were the same people she saw earlier or not. It's
+scary that that can happen.
 
 ----
 
