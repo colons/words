@@ -124,7 +124,8 @@ def build():
 
     articles = []
 
-    for slug in os.listdir(ARTICLES_PATH):
+    for slug in [d for d in os.listdir(ARTICLES_PATH)
+                 if not d.startswith('.')]:
         article = Article(slug)
         article.bounce()
         articles.append(article)
