@@ -59,10 +59,10 @@ probably make it worse. (If you're reading this, I'm sorry. We're cool.)
 ----
 
 Disembarking from a London Underground train, we meet *That Guy*. That Guy is
-heading home from his Important Job. That Guy is white and middle-aged. That
-Guy is boarding the train at the door we are leaving from. That Guy does not
-have long before we will be out of his life forever, but That Guy very much
-wants us to know that He Has Feelings About This.
+heading home from his Important Job. That Guy is white and middle-aged and
+wearing a suit. That Guy is boarding the train at the door we are leaving from.
+That Guy does not have long before we will be out of his life forever, but That
+Guy very much wants us to know that He Has Feelings About This.
 
 “Psh,” he snorts with powerful indignation. “I *hope* that's fancy
 dress.”
