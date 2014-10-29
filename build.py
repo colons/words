@@ -49,6 +49,12 @@ class Article(object):
                     element[attribute] = '/'.join([self.absolute_url,
                                                    url.path])
 
+    def make_external_links_target_blank(self, soup):
+        for link in soup.select('a[href]'):
+            url = urlparse(link['href'])
+            if url.netloc:
+                link['target'] = '_blank'
+
     def annotate_image_only_paragraphs(self, soup):
         """
         Add a 'figure' class to <p>s that contain no text and an <img>.
@@ -69,6 +75,7 @@ class Article(object):
         title_element.decompose()
 
         self.fix_internal_links(soup)
+        self.make_external_links_target_blank(soup)
         self.annotate_image_only_paragraphs(soup)
 
         self.html = unicode(soup)
