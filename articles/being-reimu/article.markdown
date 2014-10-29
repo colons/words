@@ -13,7 +13,7 @@ at us. “Hey, ladies!” then, to his friend, “there's two lads…”
 [Cirno][okand] and I are heading to [MCM][mcm] (a nerd convention in London),
 but we've a long way to go and we're pretty conspicuous.
 
-[okand]: https://twitter.com/okand
+[okand]: http://rennerfelt.org/blog/mcm-london/
 [mcm]: http://www.mcmcomiccon.com/london/
 
 [![These dorks](dorks.jpg)](https://twitter.com/EuricaeriS/status/526113599534936064)
