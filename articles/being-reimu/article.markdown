@@ -71,12 +71,12 @@ Firstly, yes, of course it's fancy dress. These are not practical clothes. I'm
 carrying a piece of dowel with strips of paper taped to the end and my friend
 here has wire fairy wings on his back. We are having a bit of fun.
 
-Secondly, though, and more importantly, *what the fuck does it matter to you,
-Guy*? And why did you feel the need to let us and the our fellow passengers
-know of your disapproval? Are we a sign of the coming apocalypse? An invitation
-for Satan to bring about babies having babies and cats living with dogs? Shit,
-man, people might even find themselves attracted to us, and that wouldn't be
-*right*, dammit!
+Secondly, though, and more importantly, *what the fuck does it matter to you if
+it's not, Guy*? And why did you feel the need to let us and the our fellow
+passengers know of your disapproval? Are we a sign of the coming apocalypse? An
+invitation for Satan to bring about babies having babies and cats living with
+dogs? Shit, man, people might even find themselves attracted to us, and that
+wouldn't be *right*, dammit!
 
 ----
 
