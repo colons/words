@@ -13,7 +13,7 @@
         max-width: 50em;
         margin: 0 auto;
         font-size: 1.1em;
-        padding: 0 1em;
+        padding: 0 1rem;
         font-family: 'Noticia Text', sans-serif;
       }
 
@@ -130,6 +130,14 @@
       footer img {
         width: 6em;
         height: 6em;
+      }
+
+      @media (max-width: 30em) {
+        p.figure {
+          margin-left: -1rem;
+          margin-right: -1rem;
+          text-align: center;
+        }
       }
 
       @media (max-width: 25em) {

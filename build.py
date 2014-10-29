@@ -40,13 +40,7 @@ class Article(object):
 
         self.meta = self.get_metadata()
 
-    def read_markdown(self):
-        raw_html = subprocess.check_output(['markdown', self.markdown_path])
-        soup = BeautifulSoup(raw_html)
-        title_element = soup.select('h1')[0]
-        self.title = title_element.text
-        title_element.decompose()
-
+    def fix_internal_links(self, soup):
         for attribute in ['src', 'href']:
             for element in soup.select('[{0}]'.format(attribute)):
                 url = urlparse(element[attribute])
@@ -54,6 +48,28 @@ class Article(object):
                 if not (url.netloc or url.path.startswith('/')):
                     element[attribute] = '/'.join([self.absolute_url,
                                                    url.path])
+
+    def annotate_image_only_paragraphs(self, soup):
+        """
+        Add a 'figure' class to <p>s that contain no text and an <img>.
+        """
+
+        for paragraph in soup.select('p'):
+            if (
+                not paragraph.text and
+                'img' in [e.name for e in paragraph.select('*')]
+            ):
+                paragraph.attrs['class'] = 'figure'
+
+    def read_markdown(self):
+        raw_html = subprocess.check_output(['markdown', self.markdown_path])
+        soup = BeautifulSoup(raw_html)
+        title_element = soup.select('h1')[0]
+        self.title = title_element.text
+        title_element.decompose()
+
+        self.fix_internal_links(soup)
+        self.annotate_image_only_paragraphs(soup)
 
         self.html = unicode(soup)
 
