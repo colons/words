@@ -99,9 +99,9 @@ scary that that can happen.
 The sun has long since set when we get back to Leicester. People have started
 their evening of drinking and the roads are still busy. We are honked at a few
 times, a near-toothless man walking out of a pub blesses us, and my pulse
-doubles every time we have to walk past a man. The vast majority of
-interactions we have are positive, but I can't shake the fear of [how upset
-people can get about Gender Stuff][upset]. It was fun, but I am glad to get the
+doubles every time we have to walk past a man. The majority of interactions we
+had were positive, but the ones that were not all smacked of [people getting
+very upset about Gender Stuff][upset]. It was fun, but I am glad to get the
 costume off.
 
 [upset]: http://www.patheos.com/blogs/wwjtd/2012/05/murder-statistics-of-transgender-people/
