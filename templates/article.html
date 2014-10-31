@@ -8,6 +8,9 @@
   <meta name="twitter:title" content="{{ article.title }}" />
   <meta name="twitter:description" content="{{ article.get_summary }}" />
   <meta name="twitter:url" content="{{ article.get_absolute_url }}" />
+  {% if article.featured_image %}
+    <meta name="twitter:image" content="{{ article.get_absolute_url }}{{ article.featured_image }}" />
+  {% endif %}
 {% endblock %}
 
 {% block content %}
