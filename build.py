@@ -104,6 +104,14 @@ class Article(object):
             '{slug}/article.markdown'.format(slug=self.slug)
         )
 
+    def get_absolute_url(self):
+        return '{}{}{}/'.format(DOMAIN, ROOT, self.slug)
+
+    def get_summary(self):
+        return [
+            p.text for p in BeautifulSoup(self.html).select('p') if p.text
+        ][0]
+
 
 def render_index(articles):
     context = Context({
