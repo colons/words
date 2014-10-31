@@ -41,6 +41,9 @@ class Article(object):
 
         self.meta = self.get_metadata()
 
+    def __str__(self):
+        return '{title} ({slug})'.format(**self.__dict__)
+
     def fix_internal_links(self, soup):
         for attribute in ['src', 'href']:
             for element in soup.select('[{0}]'.format(attribute)):
@@ -68,6 +71,20 @@ class Article(object):
             ):
                 paragraph.attrs['class'] = 'figure'
 
+    def find_featured_image(self, soup):
+        featured_substring = ' (featured)'
+        self.featured_image = None
+
+        for image in soup.select('img[alt]'):
+            if image['alt'].endswith(featured_substring):
+                image['alt'] = image['alt'][0:-len(featured_substring)]
+
+                if self.featured_image is None:
+                    self.featured_image = image['src']
+                else:
+                    raise ValueError("{} has more than one featured image"
+                                     .format(self))
+
     def read_markdown(self):
         raw_html = subprocess.check_output(['markdown', self.markdown_path])
         soup = BeautifulSoup(raw_html)
@@ -75,6 +92,7 @@ class Article(object):
         self.title = title_element.text
         title_element.decompose()
 
+        self.find_featured_image(soup)
         self.fix_internal_links(soup)
         self.make_external_links_target_blank(soup)
         self.annotate_image_only_paragraphs(soup)

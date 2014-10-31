@@ -16,7 +16,7 @@ but we've a long way to go and we're pretty conspicuous.
 [okand]: http://rennerfelt.org/blog/mcm-london/
 [mcm]: http://www.mcmcomiccon.com/london/
 
-[![These dorks](dorks.jpg)](https://twitter.com/EuricaeriS/status/526113599534936064)
+[![These dorks (featured)](dorks.jpg)](https://twitter.com/EuricaeriS/status/526113599534936064)
 
 We're white dudes. We know that when we get home we can take the costumes off
 and revert to our usual, privileged state. It doesn't hurt that we are not
