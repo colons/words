@@ -18,6 +18,7 @@ BUILD_PATH = os.path.join(BASE_PATH, '_build')
 ARTICLES_PATH = os.path.join(BASE_PATH, 'articles')
 
 DOMAIN = 'https://colons.co'
+TWITTER_SCREEN_NAME = 'mftb'
 ROOT = '/words/'
 FEED_FILENAME = 'feed.xml'
 FEED_URL = ROOT + FEED_FILENAME
