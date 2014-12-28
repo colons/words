@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import hashlib
 import os
 import shutil
 import subprocess
@@ -22,6 +23,8 @@ TWITTER_SCREEN_NAME = 'mftb'
 ROOT = '/words/'
 FEED_FILENAME = 'feed.xml'
 FEED_URL = ROOT + FEED_FILENAME
+
+FILE_HASHES = {}
 
 settings.configure(
     TEMPLATE_DIRS=[os.path.join(BASE_PATH, 'templates')],
@@ -172,8 +175,10 @@ def build():
 
     os.mkdir(BUILD_PATH)
 
-    with open(os.path.join(BUILD_PATH, 'style.css'), 'w') as css:
-        css.write(subprocess.check_output(['lessc', 'style.less']))
+    with open(os.path.join(BUILD_PATH, 'style.css'), 'w') as css_file:
+        css = subprocess.check_output(['lessc', 'style.less'])
+        FILE_HASHES['css'] = hashlib.sha256(css).hexdigest()[:16]
+        css_file.write(css)
 
     articles = []
 

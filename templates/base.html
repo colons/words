@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Noticia+Text:400,700italic,700,400italic" rel="stylesheet" type="text/css">
     <base href="{{ globals.ROOT }}">
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="style.css?{{ globals.FILE_HASHES.css }}" rel="stylesheet" type="text/css">
     {% block twitter_card %}{% endblock %}
   </head>
   <body>
