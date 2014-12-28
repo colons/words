@@ -24,10 +24,21 @@ body {
       font-size: 1.5em;
       margin-bottom: 0;
       font-weight: normal;
+
+      @media print {
+        a {
+          color: #111;
+        }
+      }
     }
+
     #links {
       margin: 0;
       padding: 0;
+
+      @media print {
+        display: none;
+      }
 
       li {
         display: inline;
@@ -40,6 +51,10 @@ body {
           content: none;
         }
       }
+    }
+
+    @media print {
+      padding: 0 !important;
     }
   }
 
@@ -131,6 +146,12 @@ body {
     img {
       width: 6em;
       height: 6em;
+    }
+
+    @media print {
+      p {
+        display: none;
+      }
     }
   }
 }
