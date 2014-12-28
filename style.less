@@ -1,6 +1,11 @@
+@fg: #111;
+@bg: #fafafa;
+@hl: #c52;
+@border: #ccc;
+
 body {
-  color: #111;
-  background-color: #fafafa;
+  color: @fg;
+  background-color: @bg;
   max-width: 50em;
   margin: 0 auto;
   font-size: 1.1em;
@@ -8,11 +13,11 @@ body {
   font-family: 'Noticia Text', sans-serif;
 
   a {
-    color: #c52;
+    color: @hl;
     text-decoration: none;
 
     &:hover {
-      color: #111;
+      color: @fg;
     }
   }
 
@@ -27,7 +32,7 @@ body {
 
       @media print {
         a {
-          color: #111;
+          color: @fg;
         }
       }
     }
@@ -68,7 +73,7 @@ body {
     blockquote {
       margin-left: .3em;
       padding-left: .5em;
-      border-left: .3em solid #ccc;
+      border-left: .3em solid @border;
     }
 
     hr {
