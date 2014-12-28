@@ -172,6 +172,9 @@ def build():
 
     os.mkdir(BUILD_PATH)
 
+    with open(os.path.join(BUILD_PATH, 'style.css'), 'w') as css:
+        css.write(subprocess.check_output(['lessc', 'style.less']))
+
     articles = []
 
     for slug in [d for d in os.listdir(ARTICLES_PATH)
