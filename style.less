@@ -3,6 +3,16 @@
 @hl: #c52;
 @border: #ccc;
 
+.iterlist() {
+  &::after {
+    content: ' •';
+  }
+
+  &:last-child::after {
+    content: none;
+  }
+}
+
 body {
   color: @fg;
   background-color: @bg;
@@ -100,12 +110,8 @@ body {
       margin-top: 0;
       font-size: 0.9em;
 
-      > *::after {
-        content: ' •';
-      }
-
-      > *:last-child::after {
-        content: none;
+      > * {
+        .iterlist();
       }
     }
 
@@ -128,15 +134,13 @@ body {
   }
 
   .article-list article {
+    .iterlist();
+
     &::after {
-      content: '•';
       font-size: 1.5em;
       display: block;
       margin: 4rem 0 2rem;
       text-align: center;
-    }
-    &:last-child::after {
-      content: none;
     }
   }
 
