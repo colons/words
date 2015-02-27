@@ -16,7 +16,7 @@ but we've a long way to go and we're pretty conspicuous.
 [okand]: http://rennerfelt.org/blog/mcm-london/
 [mcm]: http://www.mcmcomiccon.com/london/
 
-[![Two white dudes dressed as Touhou characters. The one on the left (Reimu, in a frilly red dress and long brown wig) is hitting the one on the right, Cirno (short blue wig, blue dress) with a home-made gohei. (featured)](dorks.jpg)](https://twitter.com/EuricaeriS/status/526113599534936064)
+[![Two white dudes dressed as Touhou characters. The one on the left (Reimu, in a frilly red dress and long brown wig) is hitting the one on the right (Cirno, wearing a short blue wig, a blue dress, and wire fairy wings) with a home-made gohei. (featured)](dorks.jpg)](https://twitter.com/EuricaeriS/status/526113599534936064)
 
 We're white dudes. We know that when we get home we can take the costumes off
 and revert to our usual, privileged state. It doesn't hurt that we are not
