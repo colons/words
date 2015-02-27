@@ -31,11 +31,11 @@ but you won't feel right until they're gone.
 
 As an example, here's before:
 
-![lots of notifications](android-full.png)
+![A messy status bar full of icons vying for attention.](android-full.png)
 
 And after:
 
-![phew](android-empty.png)
+![The same status bar, but with no icons. Much cleaner.](android-empty.png)
 
 Feels better, right? You now know, without taking any action, that there's
 nothing left for you to deal with right now. And everything is tidy.
@@ -43,11 +43,11 @@ nothing left for you to deal with right now. And everything is tidy.
 Here's Notification Center's entire visible UI when you have notifications
 pending:
 
-![lots of notifications?](osx-full.png)
+![An icon that one can assume is supposed to represent notifications, with no badges or any indication that something important is here.](osx-full.png)
 
 And when you do not:
 
-![oh](osx-empty.png)
+![Literally exactly the same image as the previous one.](osx-empty.png)
 
 Nothing changes.
 
