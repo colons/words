@@ -47,7 +47,7 @@ actually wants to say. It is like he is either trying to prove that he is
 Totally Cool With This or is trying to decide if he even wants to be here at
 all. We humour him.
 
-[troupe]: https://colons.co/troupe.jpg
+[troupe]: https://colons.co/troupe.jpg "Photo by @sachcell"
 
 The man who takes our order at dinner gets super into the spirit of it, asking
 who we are and complimenting us. After taking our orders, he calls us ‘girls’
