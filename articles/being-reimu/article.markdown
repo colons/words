@@ -40,14 +40,14 @@ the other direction, too nonchalantly. A few apparent first-time visitors are
 more surprised; one woman remarks “That's a boy! Dressed as a girl!
 *Shocking*.”
 
-While waiting for Marisa to show up and complete [the troupe][yirba], a man who
+While waiting for Marisa to show up and complete [the troupe][troupe], a man who
 is “here with [his] nephew” approaches us and speaks for a while and asks some
 mostly innocuous questions, but he seems to be dancing around saying what he
 actually wants to say. It is like he is either trying to prove that he is
 Totally Cool With This or is trying to decide if he even wants to be here at
 all. We humour him.
 
-[yirba]: http://sachcell.tumblr.com/post/100990329767/i-think-this-is-my-fav-photo-from-today-omg-hope
+[troupe]: https://colons.co/troupe.jpg
 
 The man who takes our order at dinner gets super into the spirit of it, asking
 who we are and complimenting us. After taking our orders, he calls us ‘girls’
