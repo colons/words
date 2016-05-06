@@ -20,6 +20,7 @@ ARTICLES_PATH = os.path.join(BASE_PATH, 'articles')
 
 DOMAIN = 'https://colons.co'
 TWITTER_SCREEN_NAME = 'mftb'
+AUTHOR = 'colons'
 ROOT = '/words/'
 FEED_FILENAME = 'feed.xml'
 FEED_URL = ROOT + FEED_FILENAME
@@ -149,7 +150,7 @@ def render_feed(articles):
         title='words from a colons',
         feed_url=DOMAIN + FEED_URL,
         url=DOMAIN + ROOT,
-        author='Iain Dawson',
+        author=AUTHOR,
     )
 
     feed_item_template = get_template('feed_item.html')
@@ -161,7 +162,7 @@ def render_feed(articles):
             title=article.title,
             content=feed_item_template.render(context),
             content_type='html',
-            author='Iain Dawson',
+            author=AUTHOR,
             url=DOMAIN + article.absolute_url,
             updated=article.meta['date'],
         )
