@@ -18,13 +18,13 @@ but we've a long way to go and we're pretty conspicuous.
 
 [![Two white dudes dressed as Touhou characters. The one on the left (Reimu, in a frilly red dress and long brown wig) is hitting the one on the right (Cirno, wearing a short blue wig, a blue dress, and wire fairy wings) with a home-made gohei. (featured)](dorks.jpg)](https://twitter.com/EuricaeriS/status/526113599534936064)
 
-We're white dudes. We know that when we get home we can take the costumes off
-and revert to our usual, privileged state. It doesn't hurt that we are not
-wearing makeup and these particular costumes make it clear even to people who
-don't recognise the characters that we are very much still white dudes. Still,
-we are drawing attention to gender in a way that takes people out of their
-comfort zones, but because we are not *us*, we can view their reactions with
-detachment.
+We're still presenting as white dudes. We know that when we get home we can
+take the costumes off and revert to our usual, privileged state. It doesn't
+hurt that we are not wearing makeup and these particular costumes make it clear
+even to people who don't recognise the characters that we are very much still
+white dudes. Still, we are drawing attention to gender in a way that takes
+people out of their comfort zones, but because we are not *us*, we can view
+their reactions with detachment.
 
 Reactions are varied, fascinating, and occasionally frightening. Some
 compliment us with slightly sneering irony. Some compliment us with sincerity.
