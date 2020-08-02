@@ -150,11 +150,6 @@ def render_index(articles):
     return get_template('index.html').render(context)
 
 
-class EntryBaseExtension:
-    def extend_atom(self, entry):
-        entry.set('base', DOMAIN + FEED_URL)
-
-
 def render_feed(articles):
     feed = FeedGenerator()
     feed.id(DOMAIN + FEED_URL)
@@ -176,8 +171,6 @@ def render_feed(articles):
         entry.author({'name': AUTHOR})
         entry.updated(article.meta['date'])
         entry.content(feed_item_template.render(context), type='html')
-        entry.register_extension('entry_base', EntryBaseExtension,
-                                 atom=True, rss=False)
 
     return feed.atom_str(pretty=True)
 
