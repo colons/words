@@ -4,13 +4,13 @@ import hashlib
 import os
 import shutil
 import subprocess
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 from bs4 import BeautifulSoup
-from django.template import Context
-from django.template.loader import get_template
+import django
 from django.conf import settings
-from pyatom import AtomFeed
+from django.template.loader import get_template
+from feedgen.feed import FeedGenerator
 import yaml
 
 
@@ -28,11 +28,17 @@ FEED_URL = ROOT + FEED_FILENAME
 FILE_HASHES = {}
 
 settings.configure(
-    TEMPLATE_DIRS=[os.path.join(BASE_PATH, 'templates')],
+    TEMPLATES=[{
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_PATH, 'templates')],
+        'APP_DIRS': False,
+    }],
     DATE_FORMAT='M jS, Y',
     USE_TZ=True,
     TIME_ZONE='Europe/London',
 )
+
+django.setup()
 
 
 class Article(object):
@@ -91,7 +97,7 @@ class Article(object):
 
     def read_markdown(self):
         raw_html = subprocess.check_output(['markdown', self.markdown_path])
-        soup = BeautifulSoup(raw_html)
+        soup = BeautifulSoup(raw_html, features='lxml')
         title_element = soup.select('h1')[0]
         self.title = title_element.text
         title_element.decompose()
@@ -101,14 +107,14 @@ class Article(object):
         self.make_external_links_target_blank(soup)
         self.annotate_image_only_paragraphs(soup)
 
-        self.html = unicode(soup)
+        self.html = str(soup)
 
     def get_metadata(self):
         with open(os.path.join(self.path, 'meta.yaml')) as yaml_file:
-            return yaml.load(yaml_file)
+            return yaml.safe_load(yaml_file)
 
     def render(self):
-        context = Context({'globals': globals(), 'article': self})
+        context = {'globals': globals(), 'article': self}
         return get_template('article.html').render(context)
 
     def bounce(self):
@@ -119,7 +125,7 @@ class Article(object):
         rendered = self.render()
 
         with open(html_path, 'w') as html_file:
-            html_file.write(rendered.encode('utf-8'))
+            html_file.write(rendered)
 
     def history_url(self):
         return (
@@ -131,43 +137,49 @@ class Article(object):
         return '{}{}{}/'.format(DOMAIN, ROOT, self.slug)
 
     def get_summary(self):
-        return [
-            p.text for p in BeautifulSoup(self.html).select('p') if p.text
-        ][0]
+        return [p.text for p in BeautifulSoup(self.html, features='lxml')
+                .select('p') if p.text][0]
 
 
 def render_index(articles):
-    context = Context({
+    context = {
         'is_index': True,
         'globals': globals(),
         'articles': articles,
-    })
+    }
     return get_template('index.html').render(context)
 
 
+class EntryBaseExtension:
+    def extend_atom(self, entry):
+        entry.set('base', DOMAIN + FEED_URL)
+
+
 def render_feed(articles):
-    feed = AtomFeed(
-        title='words from a colons',
-        feed_url=DOMAIN + FEED_URL,
-        url=DOMAIN + ROOT,
-        author=AUTHOR,
-    )
+    feed = FeedGenerator()
+    feed.id(DOMAIN + FEED_URL)
+    feed.title('words from a colons')
+    feed.author({'name': AUTHOR})
+    feed.link(href=DOMAIN + ROOT)
+    feed.link(href=(DOMAIN + FEED_URL), rel='self')
 
     feed_item_template = get_template('feed_item.html')
 
     for article in articles:
-        context = Context({'article': article})
+        context = {'article': article}
 
-        feed.add(
-            title=article.title,
-            content=feed_item_template.render(context),
-            content_type='html',
-            author=AUTHOR,
-            url=DOMAIN + article.absolute_url,
-            updated=article.meta['date'],
-        )
+        entry = feed.add_entry(order='append')
+        url = DOMAIN + article.absolute_url
+        entry.id(url)
+        entry.link(href=url)
+        entry.title(article.title)
+        entry.author({'name': AUTHOR})
+        entry.updated(article.meta['date'])
+        entry.content(feed_item_template.render(context), type='html')
+        entry.register_extension('entry_base', EntryBaseExtension,
+                                 atom=True, rss=False)
 
-    return feed.to_string()
+    return feed.atom_str(pretty=True)
 
 
 def build():
@@ -176,7 +188,7 @@ def build():
 
     os.mkdir(BUILD_PATH)
 
-    with open(os.path.join(BUILD_PATH, 'style.css'), 'w') as css_file:
+    with open(os.path.join(BUILD_PATH, 'style.css'), 'bw') as css_file:
         css = subprocess.check_output(['lessc', 'style.less'])
         FILE_HASHES['css'] = hashlib.sha256(css).hexdigest()[:16]
         css_file.write(css)
@@ -192,10 +204,10 @@ def build():
     articles.sort(key=lambda a: a.meta['date'], reverse=True)
 
     with open(os.path.join(BUILD_PATH, 'index.html'), 'w') as index_file:
-        index_file.write(render_index(articles).encode('utf-8'))
+        index_file.write(render_index(articles))
 
-    with open(os.path.join(BUILD_PATH, FEED_FILENAME), 'w') as feed_file:
-        feed_file.write(render_feed(articles).encode('utf-8'))
+    with open(os.path.join(BUILD_PATH, FEED_FILENAME), 'wb') as feed_file:
+        feed_file.write(render_feed(articles))
 
 
 if __name__ == "__main__":
