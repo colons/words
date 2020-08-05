@@ -100,7 +100,7 @@ their refusal:
 I then waited for three months, hearing nothing. I assumed it'd managed to fall
 through a crack somewhere or was being intentionally ignored, but this is
 [happening to a lot of people at the moment][delays]. When I chased on the 27th
-of July, I was told the licens had already been issued and posted, and that I'd
+of July, I was told the license had already been issued and posted, and that I'd
 have it soon. It showed up a few days later without any enclosed
 acknowledgement of my letter.
 
