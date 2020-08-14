@@ -2,6 +2,10 @@
 @bg: #fafafa;
 @hl: #c52;
 @border: #ccc;
+@dark_bg: #111;
+@dark_fg: #ddd;
+@dark_hl: lighten(@hl, 5);
+@dark_border: #444;
 
 .iterlist() {
   &::after {
@@ -13,9 +17,21 @@
   }
 }
 
+.dark(@rules) {
+  @media (prefers-color-scheme: dark) {
+    @rules();
+  }
+}
+
 body {
   color: @fg;
   background-color: @bg;
+
+  .dark({
+    color: @dark_fg;
+    background-color: @dark_bg;
+  });
+
   max-width: 50em;
   margin: 0 auto;
   font-size: 1.1em;
@@ -24,10 +40,12 @@ body {
 
   a {
     color: @hl;
+    .dark({ color: @dark_hl; });
     text-decoration: none;
 
     &:hover {
       color: @fg;
+      .dark({ color: @dark_fg; });
     }
   }
 
@@ -84,6 +102,7 @@ body {
       margin-left: .3em;
       padding-left: .5em;
       border-left: .3em solid @border;
+      .dark({ border-left-color: @dark_border; });
     }
 
     hr {
